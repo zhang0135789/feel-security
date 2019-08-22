@@ -8,6 +8,15 @@ server:
   servlet:
     context-path: /api
 
+logging:
+  config: classpath:logback-spring.xml
+  level:
+    dao: debug
+    org:
+      mybatis: error
+    com.feel: debug
+
+
 # mysql
 spring:
   # 环境 dev|test|prod

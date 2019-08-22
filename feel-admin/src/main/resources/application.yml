@@ -8,6 +8,15 @@ server:
   servlet:
     context-path: /admin
 
+logging:
+  config: classpath:logback-spring.xml
+  level:
+    dao: debug
+    org:
+      mybatis: error
+    com.feel: debug
+
+
 spring:
   profiles:
     active: dev
