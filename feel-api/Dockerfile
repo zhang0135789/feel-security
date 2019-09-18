@@ -1,7 +1,7 @@
 FROM java:8
-EXPOSE 8081
+EXPOSE 10088
 
 VOLUME /tmp
-ADD renren-api.jar /app.jar
+ADD feel-api.jar /app.jar
 RUN bash -c 'touch /app.jar'
 ENTRYPOINT ["java","-jar","/app.jar"]

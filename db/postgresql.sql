@@ -143,7 +143,7 @@ CREATE TABLE schedule_job_log (
 CREATE INDEX index_job_id on schedule_job_log(job_id);
 
 
-INSERT INTO sys_user (user_id, username, password, salt, email, mobile, status, dept_id, create_time) VALUES ('1', 'admin', 'e1153123d7d180ceeb820d577ff119876678732a68eef4e6ffc0b1f06a01f91b', 'YzcmCZNvbXocrsz9dm8e', 'root@renren.io', '13612345678', '1', '1', '2016-11-11 11:11:11');
+INSERT INTO sys_user (user_id, username, password, salt, email, mobile, status, dept_id, create_time) VALUES ('1', 'admin', 'e1153123d7d180ceeb820d577ff119876678732a68eef4e6ffc0b1f06a01f91b', 'YzcmCZNvbXocrsz9dm8e', 'root@feel.io', '13612345678', '1', '1', '2016-11-11 11:11:11');
 INSERT INTO sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES ('1', '0', '系统管理', NULL, NULL, '0', 'fa fa-cog', '0');
 INSERT INTO sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES ('2', '1', '管理员管理', 'modules/sys/user.html', NULL, '1', 'fa fa-user', '1');
 INSERT INTO sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES ('3', '1', '角色管理', 'modules/sys/role.html', NULL, '1', 'fa fa-user-secret', '2');
@@ -185,7 +185,7 @@ INSERT INTO sys_menu(menu_id, parent_id, name, url, perms, type, icon, order_num
 INSERT INTO sys_menu(menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (40, 36, '删除', NULL, 'sys:dict:delete', 2, NULL, 6);
 
 
-INSERT INTO sys_dept (dept_id, parent_id, name, order_num, del_flag) VALUES ('1', '0', '人人开源集团', '0', '0');
+INSERT INTO sys_dept (dept_id, parent_id, name, order_num, del_flag) VALUES ('1', '0', 'feel集团', '0', '0');
 INSERT INTO sys_dept (dept_id, parent_id, name, order_num, del_flag) VALUES ('2', '1', '长沙分公司', '1', '0');
 INSERT INTO sys_dept (dept_id, parent_id, name, order_num, del_flag) VALUES ('3', '1', '上海分公司', '2', '0');
 INSERT INTO sys_dept (dept_id, parent_id, name, order_num, del_flag) VALUES ('4', '3', '技术部', '0', '0');
@@ -197,7 +197,7 @@ INSERT INTO sys_dict(id, name, type, code, value, order_num, remark, del_flag) V
 
 INSERT INTO sys_config (param_key, param_value, status, remark) VALUES ('CLOUD_STORAGE_CONFIG_KEY',  '{"aliyunAccessKeyId":"","aliyunAccessKeySecret":"","aliyunBucketName":"","aliyunDomain":"","aliyunEndPoint":"","aliyunPrefix":"","qcloudBucketName":"","qcloudDomain":"","qcloudPrefix":"","qcloudSecretId":"","qcloudSecretKey":"","qiniuAccessKey":"NrgMfABZxWLo5B-YYSjoE8-AZ1EISdi1Z3ubLOeZ","qiniuBucketName":"ios-app","qiniuDomain":"http://7xlij2.com1.z0.glb.clouddn.com","qiniuPrefix":"upload","qiniuSecretKey":"uIwJHevMRWU0VLxFvgy0tAcOdGqasdtVlJkdy6vV","type":1}', '0', '云存储配置信息');
 
-INSERT INTO schedule_job (bean_name, params, cron_expression, status, remark, create_time) VALUES ('testTask',  'renren', '0 0/30 * * * ?', '0', '参数测试', '2016-12-01 23:16:46');
+INSERT INTO schedule_job (bean_name, params, cron_expression, status, remark, create_time) VALUES ('testTask',  'feel', '0 0/30 * * * ?', '0', '参数测试', '2016-12-01 23:16:46');
 
 
 alter sequence sys_menu_menu_id_seq restart with 41;

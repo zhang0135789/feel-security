@@ -1,7 +1,7 @@
 /**
- * Copyright (c) 2016-2019 人人开源 All rights reserved.
+ * Copyright (c) 2016-2019 feel All rights reserved.
  *
- * https://www.renren.io
+ * https://www.feel.io
  *
  * 版权所有，侵权必究！
  */
@@ -43,9 +43,9 @@ public class SwaggerConfig{
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-            .title("人人开源")
-            .description("renren-admin文档")
-            .termsOfServiceUrl("https://www.renren.io")
+            .title("feel")
+            .description("feel-admin文档")
+            .termsOfServiceUrl("https://www.feel.io")
             .version("4.0.0")
             .build();
     }

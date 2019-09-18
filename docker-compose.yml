@@ -1,14 +1,14 @@
 version: '2'
 services:
-  renren-admin:
-    image: renren/admin
+  feel-admin:
+    image: feel/admin
     ports:
-      - "8080:8080"
+      - "10086:10086"
     environment:
       - spring.profiles.active=dev
-  renren-api:
-    image: renren/api
+  feel-api:
+    image: feel/api
     ports:
-      - "8081:8081"
+      - "10088:10088"
     environment:
       - spring.profiles.active=dev

@@ -1,7 +1,7 @@
 /**
- * Copyright (c) 2016-2019 人人开源 All rights reserved.
+ * Copyright (c) 2016-2019 feel All rights reserved.
  *
- * https://www.renren.io
+ * https://www.feel.io
  *
  * 版权所有，侵权必究！
  */
@@ -30,7 +30,7 @@ public class ScheduleConfig {
 
         //quartz参数
         Properties prop = new Properties();
-        prop.put("org.quartz.scheduler.instanceName", "RenrenScheduler");
+        prop.put("org.quartz.scheduler.instanceName", "feelScheduler");
         prop.put("org.quartz.scheduler.instanceId", "AUTO");
         //线程池配置
         prop.put("org.quartz.threadPool.class", "org.quartz.simpl.SimpleThreadPool");
@@ -52,7 +52,7 @@ public class ScheduleConfig {
 
         factory.setQuartzProperties(prop);
 
-        factory.setSchedulerName("RenrenScheduler");
+        factory.setSchedulerName("feelScheduler");
         //延时启动
         factory.setStartupDelay(30);
         factory.setApplicationContextSchedulerContextKey("applicationContextKey");

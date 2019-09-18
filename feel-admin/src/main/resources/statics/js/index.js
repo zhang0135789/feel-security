@@ -93,7 +93,7 @@ var vm = new Vue({
                 area: ['806px', '467px'],
                 closeBtn: 1,
                 shadeClose: false,
-                content: ['http://cdn.renren.io/donate.jpg', 'no']
+                content: ['http://cdn.feel.io/donate.jpg', 'no']
             });
         }
 	},
@@ -119,14 +119,14 @@ function routerList(router, menuList){
 		}else if(menu.type == 1){
 			router.add('#'+menu.url, function() {
 				var url = window.location.hash;
-				
+
 				//替换iframe的url
 			    vm.main = url.replace('#', '');
-			    
+
 			    //导航菜单展开
 			    $(".treeview-menu li").removeClass("active");
 			    $("a[href='"+url+"']").parents("li").addClass("active");
-			    
+
 			    vm.navTitle = $("a[href='"+url+"']").text();
 			});
 		}
