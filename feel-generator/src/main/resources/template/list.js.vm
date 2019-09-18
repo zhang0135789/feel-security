@@ -1,23 +1,23 @@
 $(function () {
     $("#jqGrid").jqGrid({
-        url: baseURL + '${moduleName}/${pathName}/list',
+        url: baseURL + 'v1/b/${pathName}/list',
         datatype: "json",
-        colModel: [			
+        colModel: [
 #foreach($column in $columns)
 #if($column.columnName == $pk.columnName)
 			{ label: '${column.attrname}', name: '${column.attrname}', index: '${column.columnName}', width: 50, key: true },
 #else
 			{ label: '${column.comments}', name: '${column.attrname}', index: '${column.columnName}', width: 80 }#if($velocityCount != $columns.size()), #end
-			
-#end			
+
+#end
 #end
         ],
 		viewrecords: true,
         height: 385,
         rowNum: 10,
 		rowList : [10,30,50],
-        rownumbers: true, 
-        rownumWidth: 25, 
+        rownumbers: true,
+        rownumWidth: 25,
         autowidth:true,
         multiselect: true,
         pager: "#jqGridPager",
@@ -28,13 +28,13 @@ $(function () {
             records: "page.totalCount"
         },
         prmNames : {
-            page:"page", 
-            rows:"limit", 
+            page:"page",
+            rows:"limit",
             order: "order"
         },
         gridComplete:function(){
         	//隐藏grid底部滚动条
-        	$("#jqGrid").closest(".ui-jqgrid-bdiv").css({ "overflow-x" : "hidden" }); 
+        	$("#jqGrid").closest(".ui-jqgrid-bdiv").css({ "overflow-x" : "hidden" });
         }
     });
 });
@@ -62,12 +62,12 @@ var vm = new Vue({
 			}
 			vm.showList = false;
             vm.title = "修改";
-            
+
             vm.getInfo(${pk.attrname})
 		},
 		saveOrUpdate: function (event) {
 		    $('#btnSaveOrUpdate').button('loading').delay(1000).queue(function() {
-                var url = vm.${classname}.${pk.attrname} == null ? "${moduleName}/${pathName}/save" : "${moduleName}/${pathName}/update";
+                var url = vm.${classname}.${pk.attrname} == null ? "v1/b/${pathName}/save" : "v1/b/${pathName}/update";
                 $.ajax({
                     type: "POST",
                     url: baseURL + url,
@@ -100,8 +100,8 @@ var vm = new Vue({
                if(!lock) {
                     lock = true;
 		            $.ajax({
-                        type: "POST",
-                        url: baseURL + "${moduleName}/${pathName}/delete",
+                        type: "DELETE",
+                        url: baseURL + "v1/b/${pathName}/delete",
                         contentType: "application/json",
                         data: JSON.stringify(${pk.attrname}s),
                         success: function(r){
@@ -118,14 +118,14 @@ var vm = new Vue({
              });
 		},
 		getInfo: function(${pk.attrname}){
-			$.get(baseURL + "${moduleName}/${pathName}/info/"+${pk.attrname}, function(r){
+			$.get(baseURL + "v1/b/${pathName}/info/"+${pk.attrname}, function(r){
                 vm.${classname} = r.${classname};
             });
 		},
 		reload: function (event) {
 			vm.showList = true;
 			var page = $("#jqGrid").jqGrid('getGridParam','page');
-			$("#jqGrid").jqGrid('setGridParam',{ 
+			$("#jqGrid").jqGrid('setGridParam',{
                 page:page
             }).trigger("reloadGrid");
 		}
