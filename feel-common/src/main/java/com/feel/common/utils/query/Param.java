@@ -1,6 +1,5 @@
 package com.feel.common.utils.query;
 
-import com.feel.modules.app.query.Term.Type;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -25,7 +24,7 @@ public class Param implements Cloneable {
         term.setTermType(termType);
         term.setColumn(column);
         term.setValue(value);
-        term.setType(Type.or);
+        term.setType(Term.Type.or);
         this.terms.add(term);
         return (T)this;
     }
@@ -35,7 +34,7 @@ public class Param implements Cloneable {
         term.setTermType(termType);
         term.setColumn(column);
         term.setValue(value);
-        term.setType(Type.and);
+        term.setType(Term.Type.and);
         this.terms.add(term);
         return (T)this;
     }
@@ -52,7 +51,7 @@ public class Param implements Cloneable {
         Term term = new Term();
         term.setColumn(termString);
         term.setValue(value);
-        term.setType(Type.and);
+        term.setType(Term.Type.and);
         this.terms.add(term);
         return term;
     }
@@ -61,7 +60,7 @@ public class Param implements Cloneable {
         Term term = new Term();
         term.setColumn(termString);
         term.setValue(value);
-        term.setType(Type.or);
+        term.setType(Term.Type.or);
         this.terms.add(term);
         return term;
     }
